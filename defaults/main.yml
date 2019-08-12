@@ -1,0 +1,19 @@
+---
+
+# Whether or not to redirect HTTP to HTTPS instead of running reverse proxy for it.
+nginx_redirect_http_to_https: true
+
+# The host to reverse proxy for.
+nginx_reverse_proxy_host: 127.0.0.1
+
+# The port to reverse proxy for.
+nginx_reverse_proxy_port: 8000
+
+# The name of the certificate file to use for SSL.
+nginx_cert_name: "{{ inventory_hostname }}"
+
+# A raw snippet to put before the location statement.
+nginx_pre_location_snippet: ""
+
+# A raw snippet to put afterthe location statement.
+nginx_post_location_snippet: ""
