@@ -2,4 +2,4 @@
 
 - name: bihealth.ssl_certs
   src: git+https://github.com/bihealth/ansible-role-ssl-certs.git
-  version: "v0.1.0"
+  version: "v0.1.1"
