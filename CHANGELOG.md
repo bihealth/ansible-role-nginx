@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.2
+
+- Fixing role name.
+- Fixing CentOS => EL.
+- Depending on Galaxy name of `bihealth.ssl_certs`.
+
 ## v0.1.1
 
 - Bumping dependency `bihealth.ssl_certs`.
