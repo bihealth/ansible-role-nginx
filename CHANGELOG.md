@@ -1,6 +1,6 @@
 # Changelog
 
-## HEAD (unreleased)
+## v0.2.0
 
 - Allowing to configure simple HTML page at locations.
 
