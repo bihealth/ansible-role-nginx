@@ -27,5 +27,22 @@
       /etc/ssl/private/{{ nginx_cert_name }}.key are missing
   when: (not stat_ssl_cert.stat.exists) or (not stat_ssl_key.stat.exists)
 
+- name: create base directory for static HTML pages
+  file:
+    path: /etc/nginx/static_pages
+    state: directory
+
+- name: create directories for static HTML pages
+  file:
+    path: /etc/nginx/static_pages/{{ item.name }}
+    state: directory
+  loop: "{{ nginx_static_pages }}"
+
+- name: write out static HTML pages
+  copy:
+    content: "{{ item.html_content }}"
+    dest: /etc/nginx/static_pages/{{ item.name }}/index.html
+  loop: "{{ nginx_static_pages }}"
+
 - name: start and enable nginx
   systemd: name=nginx state=started enabled=true

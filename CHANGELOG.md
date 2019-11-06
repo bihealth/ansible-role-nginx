@@ -1,5 +1,9 @@
 # Changelog
 
+## HEAD (unreleased)
+
+- Allowing to configure simple HTML page at locations.
+
 ## v0.1.2
 
 - Fixing role name.

@@ -75,6 +75,13 @@ http {
 
         {{ nginx_pre_location_snippet }}
 
+        {% for item in nginx_static_pages %}
+        location ~ ^{{ item.location }}(index.html)?$ {
+            root /etc/nginx/static_pages/{{ item.name }};
+            autoindex on;
+        }
+        {% endfor %}
+
         # Simply pass down everything else for WSGI.
         location / {
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

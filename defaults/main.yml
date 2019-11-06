@@ -1,5 +1,8 @@
 ---
 
+# Optionally, a list of HTML pages to display.
+nginx_static_pages: []
+
 # Whether or not to redirect HTTP to HTTPS instead of running reverse proxy for it.
 nginx_redirect_http_to_https: true
 
