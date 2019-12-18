@@ -15,17 +15,21 @@
 - name: check whether SSL certificate file exists
   stat: path=/etc/ssl/certs/{{ nginx_cert_name }}.crt
   register: stat_ssl_cert
+  when: not nginx_proxy_vhosts
 
 - name: check whether SSL certificate file exists
   stat: path=/etc/ssl/private/{{ nginx_cert_name }}.key
   register: stat_ssl_key
+  when: not nginx_proxy_vhosts
 
 - name: fail if either certificate or key do not exist
   fail:
     msg: >
       certificate /etc/ssl/certs/{{ nginx_cert_name }}.crt or key file
       /etc/ssl/private/{{ nginx_cert_name }}.key are missing
-  when: (not stat_ssl_cert.stat.exists) or (not stat_ssl_key.stat.exists)
+  when: >
+    not nginx_proxy_vhosts and
+    ((not stat_ssl_cert.stat.exists) or (not stat_ssl_key.stat.exists))
 
 - name: create base directory for static HTML pages
   file:

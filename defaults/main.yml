@@ -20,3 +20,6 @@ nginx_pre_location_snippet: ""
 
 # A raw snippet to put afterthe location statement.
 nginx_post_location_snippet: ""
+
+# Ansible vhost proxies
+nginx_proxy_vhosts: []

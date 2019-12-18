@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0
+
+- Adding vhost support.
+
 ## v0.2.0
 
 - Allowing to configure simple HTML page at locations.
