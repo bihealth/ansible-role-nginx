@@ -31,7 +31,7 @@ http {
     include /etc/nginx/conf.d/*.conf;
 
     # Allow larger body sizes.
-    client_max_body_size 32M;
+    client_max_body_size {{ nginx_client_max_body_size }};
 
     # Bump timeout value against 504 errors.
     proxy_connect_timeout       600;

@@ -23,3 +23,5 @@ nginx_post_location_snippet: ""
 
 # Ansible vhost proxies
 nginx_proxy_vhosts: []
+
+nginx_client_max_body_size: "32M"

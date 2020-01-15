@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.1
+
+- Making maximal request size configurable.
+
 ## v0.3.0
 
 - Adding vhost support.
